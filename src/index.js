@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ElementsProvider } from '@cartolab/elements';
+import theme from './theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ElementsProvider theme={theme}>
+      <App />
+    </ElementsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
