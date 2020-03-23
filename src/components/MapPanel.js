@@ -45,7 +45,7 @@ const MapPanel = ({ viewWidth, countyData }) => {
 
         countyData.forEach((row) => {
           var val = (1 - row['COUNTA of Condition'] / maxValue) * 255;
-          var color = 'rgba(' + 0 + ', ' + 0 + ', ' + val + ', 1)';
+          var color = 'rgba(' + 0 + ', ' + val / 2 + ', ' + val + ', 1)';
           expression.push(row['County'], color);
         });
 
