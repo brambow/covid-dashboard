@@ -1,4 +1,5 @@
 const config = {
+  appTitle: 'COVID-19 Cases in the United States',
   lastUpdate: '03/23/2020',
   summaryData: {
     totalTests: 1466,

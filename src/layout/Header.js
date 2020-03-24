@@ -12,6 +12,7 @@ import { toggleColorMode } from '../redux/actions';
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
   const dispatch = useDispatch();
+  const title = config.appTitle;
   return (
     <Flex
       p={2}
@@ -32,7 +33,7 @@ const Header = () => {
           }}
           as="h2"
         >
-          COVID-19 Cases in the United States
+          {title}
         </Heading>
         <Heading
           sx={{
@@ -42,7 +43,7 @@ const Header = () => {
           }}
           as="h4"
         >
-          COVID-19 Cases in the United States
+          {title}
         </Heading>
       </Box>
       <Box>
