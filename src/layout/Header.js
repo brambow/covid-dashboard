@@ -18,17 +18,53 @@ const Header = () => {
       bg="background"
       color="text"
       height={60}
-      sx={{ justifyContent: 'space-between' }}
+      sx={{
+        justifyContent: 'space-between',
+        height: 60,
+      }}
     >
       <Box>
-        <Heading as="h1">
-          Coronavirus Cases in the United States (By County)
+        <Heading
+          sx={{
+            '@media only screen and (max-width: 768px)': {
+              display: 'none',
+            },
+          }}
+          as="h2"
+        >
+          COVID-19 Cases in the United States
+        </Heading>
+        <Heading
+          sx={{
+            '@media only screen and (min-width: 769px)': {
+              display: 'none',
+            },
+          }}
+          as="h4"
+        >
+          COVID-19 Cases in the United States
         </Heading>
       </Box>
       <Box>
-        <Text color="text">Last Update: {config.lastUpdate}</Text>
+        <Text
+          sx={{
+            '@media only screen and (max-width: 768px)': {
+              display: 'none',
+            },
+          }}
+          color="text"
+        >
+          Last Update: {config.lastUpdate}
+        </Text>
       </Box>
       <Button
+        sx={{
+          borderColor: 'text',
+          borderStyle: 'solid',
+          borderWidth: 0.5,
+          bg: 'background',
+          borderRadius: 20,
+        }}
         onClick={(e) => {
           setColorMode(colorMode === 'default' ? 'dark' : 'default');
           dispatch(
@@ -36,7 +72,11 @@ const Header = () => {
           );
         }}
       >
-        {colorMode === 'default' ? 'Dark' : 'Light'} Mode
+        {colorMode === 'default' ? (
+          <span style={{ color: '#000' }}>☾</span>
+        ) : (
+          <span>☼</span>
+        )}
       </Button>
     </Flex>
   );

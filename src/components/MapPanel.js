@@ -87,6 +87,10 @@ const MapPanel = ({ viewWidth }) => {
         width: viewWidth,
         borderRadius: 20,
         boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
+        '@media only screen and (max-width: 768px)': {
+          height: '100%',
+          width: '100%',
+        },
       }}
     >
       <Map
