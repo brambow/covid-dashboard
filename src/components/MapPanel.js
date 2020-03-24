@@ -4,6 +4,7 @@ import { Box } from 'theme-ui';
 import 'mapbox-gl/dist/mapbox-gl.css'; // we need the mapbox css
 import mapExists from '../util/mapExists';
 import config from '../config';
+import TimeSlider from './TimeSlider';
 
 const MapPanel = ({ viewWidth, countyData }) => {
   const ctx = useContext(ElementsContext);
@@ -184,6 +185,7 @@ const MapPanel = ({ viewWidth, countyData }) => {
       <Map css={{ height: '100%', width: '100%' }} mapOptions={mapOptions}>
         <Zoom />
         <MapInfo bottom="1.25rem" left="25%" />
+        <TimeSlider />
       </Map>
     </Box>
   );
