@@ -5,11 +5,33 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ElementsProvider } from '@cartolab/elements';
 import theme from './theme';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
+import appReducer from './redux/reducer';
+
+//initialize redux
+let composeEnhancers;
+
+if (process.env.NODE_ENV === 'development') {
+  composeEnhancers =
+    typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      : compose;
+}
+let store;
+
+if (process.env.NODE_ENV === 'development') {
+  store = createStore(appReducer, composeEnhancers());
+} else if (process.env.NODE_ENV === 'production') {
+  store = createStore(appReducer);
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <ElementsProvider theme={theme}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ElementsProvider>
   </React.StrictMode>,
   document.getElementById('root')
