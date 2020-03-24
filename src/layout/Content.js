@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Flex, Box } from 'theme-ui';
 import MapPanel from '../components/MapPanel';
-// import Sidebar from "./Sidebar";
+import LeftSidebar from './LeftSidebar';
 
 const Content = ({ countyData }) => {
   const [viewHeight, setViewHeight] = useState(window.innerHeight);
@@ -17,11 +17,10 @@ const Content = ({ countyData }) => {
   return (
     <Flex
       id="tab-app-content"
-      sx={{ height: viewHeight - 68, width: viewWidth }}
+      sx={{ height: viewHeight - 60, width: viewWidth }}
     >
-      {/* <Sidebar /> */}
-      {/* <MapView viewWidth={viewWidth - 200} /> */}
-      <MapPanel viewWidth={viewWidth} countyData={countyData} />
+      <LeftSidebar />
+      <MapPanel viewWidth={viewWidth - 400} countyData={countyData} />
     </Flex>
   );
 };

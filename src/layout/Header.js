@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flex, Box, Heading } from '@theme-ui/components';
-
+import { Flex, Box, Heading, Text } from '@theme-ui/components';
+import config from '../config';
 /**
  * Header Component
  *
@@ -13,7 +13,12 @@ const Header = () => {
       <Box p={2}>
         <Flex>
           <Box>
-            <Heading as="h1">Coronavirus Cases in South Carolina</Heading>
+            <Heading as="h1">
+              Coronavirus Cases in the United States (By County)
+            </Heading>
+          </Box>
+          <Box>
+            <Text color="primary">Last Update: {config.lastUpdate}</Text>
           </Box>
         </Flex>
       </Box>

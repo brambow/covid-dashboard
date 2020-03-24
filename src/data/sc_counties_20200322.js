@@ -1,7 +1,7 @@
 const countyData = [
   {
     County: 'Kershaw',
-    'COUNTA of Condition': 43,
+    'COUNTA of Condition': 44,
   },
   {
     County: 'Richland',

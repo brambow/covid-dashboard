@@ -1,4 +1,4 @@
-export default cumulativeData = [
+const cumulativeData = [
   {
     Date: '2020-03-06',
     Cumulative: 0,
@@ -65,6 +65,8 @@ export default cumulativeData = [
   },
   {
     Date: '2020-03-22',
-    Cumulative: 194,
+    Cumulative: 195,
   },
 ];
+
+export default cumulativeData;
