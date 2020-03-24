@@ -4,3 +4,10 @@ export function setDayCount(dayCount) {
     payload: dayCount,
   };
 }
+
+export function toggleColorMode(mode) {
+  return {
+    type: 'SET_COLOR_MODE',
+    payload: mode,
+  };
+}

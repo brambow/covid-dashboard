@@ -1,5 +1,6 @@
 export const initialState = {
   dayCount: 60,
+  colorMode: localStorage.getItem('theme-ui-color-mode') ?? 'default',
 };
 
 export default function appReducer(state = initialState, action) {
@@ -8,6 +9,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         dayCount: action.payload,
+      };
+    case 'SET_COLOR_MODE':
+      return {
+        ...state,
+        colorMode: action.payload,
       };
     default:
       return { ...state };

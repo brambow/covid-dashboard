@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { Card, Slider, Text, Heading } from 'theme-ui';
+import { Card, Box, Slider, Text, Heading, Flex } from 'theme-ui';
 import { useSelector, useDispatch } from 'react-redux';
 import { setDayCount } from '../redux/actions';
+import TimeAnimateButton from './TimeAnimateButton';
 
 const TimeSlider = () => {
   const dayCount = useSelector((state) => state.dayCount);
@@ -14,13 +15,13 @@ const TimeSlider = () => {
   return (
     <Card
       sx={{
-        position: 'absolute',
-        top: '8rem',
-        left: '5rem',
+        position: 'relative',
+        top: '1rem',
+        left: '1rem',
         zIndex: 2,
         bg: 'background',
         p: 4,
-        width: 300,
+        width: 400,
         borderRadius: 20,
         boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
       }}
@@ -28,19 +29,29 @@ const TimeSlider = () => {
       <Heading as="h4" sx={{ textAlign: 'center' }}>
         Time Slider
       </Heading>
-      <Slider
-        value={dayCount}
-        onChange={(e) => {
-          const value = e.currentTarget.value;
-          dispatch(setDayCount(value));
-        }}
-        min="0"
-        max="60"
-        step="1"
-      ></Slider>
+      <Flex sx={{ justifyContent: 'space-between' }}>
+        <Box sx={{ flexGrow: 3, px: 2 }}>
+          <Slider
+            value={dayCount}
+            onChange={(e) => {
+              const value = e.currentTarget.value;
+              dispatch(setDayCount(value));
+            }}
+            min="0"
+            max="60"
+            step="1"
+          ></Slider>
+        </Box>
+        <Box sx={{ flexGrow: 1, px: 2 }}>
+          <TimeAnimateButton />
+        </Box>
+      </Flex>
+
       <Heading as="h4" sx={{ textAlign: 'center' }}>
         Day: {dayCount}
       </Heading>
+      <Text>Start Date: 01/22/2020</Text>
+      <Text>End Date: 03/23/2020</Text>
     </Card>
   );
 };

@@ -8,6 +8,7 @@ import theme from './theme';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import appReducer from './redux/reducer';
+import { ThemeProvider } from 'theme-ui';
 
 //initialize redux
 let composeEnhancers;
@@ -29,9 +30,11 @@ if (process.env.NODE_ENV === 'development') {
 ReactDOM.render(
   <React.StrictMode>
     <ElementsProvider theme={theme}>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </ThemeProvider>
     </ElementsProvider>
   </React.StrictMode>,
   document.getElementById('root')

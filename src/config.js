@@ -1,5 +1,5 @@
 const config = {
-  lastUpdate: '03/22/2020 10:30 PM EDT',
+  lastUpdate: '03/23/2020',
   summaryData: {
     totalTests: 1466,
     totalCases: 195,

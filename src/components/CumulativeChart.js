@@ -8,24 +8,25 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
-import data from '../data/sc_cumulative';
-import { Card } from 'theme-ui';
+import data from '../data/total_us_cases';
+import { Card, Heading } from 'theme-ui';
 
 const CumulativeChart = () => {
   return (
     <Card
       sx={{
-        bg: 'text',
+        bg: 'background',
         color: 'primary',
         p: 3,
-        my: 2,
+        my: 3,
         mx: 3,
-        borderStyle: 'solid',
-        borderWidth: 1,
         borderRadius: 20,
-        borderColor: 'text',
+        boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
       }}
     >
+      <Heading as="h3" color="text">
+        Total US Cases
+      </Heading>
       <LineChart
         width={350}
         height={300}
@@ -38,17 +39,22 @@ const CumulativeChart = () => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Date" />
+        <XAxis dataKey="day_count" />
         <YAxis />
         <Tooltip />
         {/* <Legend /> */}
-        <Line
+        {/* <Line
           type="monotone"
-          dataKey="Cumulative"
+          dataKey="total_confirmed_cases"
           stroke="#8884d8"
           activeDot={{ r: 8 }}
+        /> */}
+        <Line
+          type="monotone"
+          dataKey="total_confirmed_cases"
+          stroke="#82ca9d"
+          activeDot={{ r: 8 }}
         />
-        <Line type="monotone" dataKey="Cumulative" stroke="#82ca9d" />
       </LineChart>
     </Card>
   );

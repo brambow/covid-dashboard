@@ -1,12 +1,16 @@
 const defaultTheme = {
   colors: {
-    text: '#333333',
+    text: '#0B132B',
     background: '#ffffff',
-    primary: '#8cba80',
-    secondary: '658e9c',
-    highlight: '#8daa91',
-    errorLight: '#edb9b9',
-    gray: '#eaeaea',
+    primary: '#5BC0BE',
+    secondary: '1C2541',
+    highlight: '#3A506B',
+    modes: {
+      dark: {
+        text: '#ffffff',
+        background: '#0B132B',
+      },
+    },
   },
   fonts: {
     body: 'Verdana, sans-serif',
