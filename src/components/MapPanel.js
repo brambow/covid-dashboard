@@ -5,10 +5,13 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // we need the mapbox css
 import mapExists from '../util/mapExists';
 import config from '../config';
 import TimeSlider from './TimeSlider';
+import { useSelector } from 'react-redux';
 
 const MapPanel = ({ viewWidth, countyData }) => {
   const ctx = useContext(ElementsContext);
   const { map } = ctx;
+  const dayCount = useSelector((state) => state.dayCount);
+
   const baseTileUrl = 'mapbox://';
 
   const mapOptions = {
@@ -45,27 +48,27 @@ const MapPanel = ({ viewWidth, countyData }) => {
           url: `${baseTileUrl}cartolab.5w53rqco`,
         });
 
-        map.addLayer({
-          id: 'pct_health_coverage',
-          type: 'fill',
-          source: 'covid-polygon-src',
-          'source-layer': 'covid_polygons',
-          paint: {
-            'fill-color': {
-              property: 'pct_w_health_coverage',
-              stops: [
-                [0, '#ffffff'],
-                [0.8, '#eff3ff'],
-                [0.84, '#bdd7e7'],
-                [0.88, '#6baed6'],
-                [0.92, '#3182bd'],
-                [0.96, '#08519c'],
-              ],
-            },
-            'fill-opacity': 0.8,
-          },
-          filter: ['match', ['get', 'date'], '2020-03-22', true, false],
-        });
+        // map.addLayer({
+        //   id: 'pct_health_coverage',
+        //   type: 'fill',
+        //   source: 'covid-polygon-src',
+        //   'source-layer': 'covid_polygons',
+        //   paint: {
+        //     'fill-color': {
+        //       property: 'pct_w_health_coverage',
+        //       stops: [
+        //         [0, '#ffffff'],
+        //         [0.8, '#eff3ff'],
+        //         [0.84, '#bdd7e7'],
+        //         [0.88, '#6baed6'],
+        //         [0.92, '#3182bd'],
+        //         [0.96, '#08519c'],
+        //       ],
+        //     },
+        //     'fill-opacity': 0.8,
+        //   },
+        //   filter: ['match', ['get', 'day_count'], 0, true, false],
+        // });
 
         map.addLayer({
           id: 'confirmed-cases-per-1000',
@@ -86,64 +89,64 @@ const MapPanel = ({ viewWidth, countyData }) => {
             },
             'fill-opacity': 0.8,
           },
-          filter: ['match', ['get', 'date'], '2020-03-22', true, false],
+          filter: ['match', ['get', 'day_count'], 60, true, false],
         });
 
-        map.addLayer({
-          id: 'confirmed-cases-per-1000-3d',
-          type: 'fill-extrusion',
-          source: 'covid-polygon-src',
-          'source-layer': 'covid_polygons',
-          paint: {
-            'fill-extrusion-color': {
-              property: 'confirmed_cases_per_1000',
-              stops: [
-                [0, '#ffffff'],
-                [0.01, '#edf8e9'],
-                [0.025, '#bae4b3'],
-                [0.05, '#74c476'],
-                [0.1, '#31a354'],
-                [0.2, '#006d2c'],
-              ],
-            },
-            'fill-extrusion-height': [
-              '*',
-              ['get', 'confirmed_cases_per_1000'],
-              10000,
-            ],
-            'fill-extrusion-base': 0,
-            'fill-extrusion-opacity': 1,
-          },
-          filter: ['match', ['get', 'date'], '2020-03-22', true, false],
-        });
+        // map.addLayer({
+        //   id: 'confirmed-cases-per-1000-3d',
+        //   type: 'fill-extrusion',
+        //   source: 'covid-polygon-src',
+        //   'source-layer': 'covid_polygons',
+        //   paint: {
+        //     'fill-extrusion-color': {
+        //       property: 'confirmed_cases_per_1000',
+        //       stops: [
+        //         [0, '#ffffff'],
+        //         [0.01, '#edf8e9'],
+        //         [0.025, '#bae4b3'],
+        //         [0.05, '#74c476'],
+        //         [0.1, '#31a354'],
+        //         [0.2, '#006d2c'],
+        //       ],
+        //     },
+        //     'fill-extrusion-height': [
+        //       '*',
+        //       ['get', 'confirmed_cases_per_1000'],
+        //       10000,
+        //     ],
+        //     'fill-extrusion-base': 0,
+        //     'fill-extrusion-opacity': 1,
+        //   },
+        //   filter: ['match', ['get', 'day_count'], 0, true, false],
+        // });
 
         map.addSource('covid-point-src', {
           type: 'vector',
           url: `${baseTileUrl}cartolab.9ocnb1rb`,
         });
 
-        map.addLayer({
-          id: 'confirmed-cases',
-          type: 'circle',
-          source: 'covid-point-src',
-          'source-layer': 'covid_points',
-          paint: {
-            'circle-radius': {
-              property: 'confirmed_cases',
-              stops: [
-                [0, 0],
-                [50, 5],
-                [100, 10],
-                [250, 15],
-                [500, 25],
-                [1000, 35],
-              ],
-            },
-            'circle-color': 'orange',
-            'circle-opacity': 0.6,
-          },
-          filter: ['match', ['get', 'date'], '2020-03-22', true, false],
-        });
+        // map.addLayer({
+        //   id: 'confirmed-cases',
+        //   type: 'circle',
+        //   source: 'covid-point-src',
+        //   'source-layer': 'covid_points',
+        //   paint: {
+        //     'circle-radius': {
+        //       property: 'confirmed_cases',
+        //       stops: [
+        //         [0, 0],
+        //         [50, 5],
+        //         [100, 10],
+        //         [250, 15],
+        //         [500, 25],
+        //         [1000, 35],
+        //       ],
+        //     },
+        //     'circle-color': 'orange',
+        //     'circle-opacity': 0.6,
+        //   },
+        //   filter: ['match', ['get', 'date'], '2020-03-22', true, false],
+        // });
 
         // const expression = ['match', ['get', 'NAME']];
 
@@ -173,6 +176,19 @@ const MapPanel = ({ viewWidth, countyData }) => {
       });
     }
   }, [map]);
+
+  useEffect(() => {
+    if (mapExists(map)) {
+      console.log(dayCount);
+      map.setFilter('confirmed-cases-per-1000', [
+        'match',
+        ['get', 'day_count'],
+        parseInt(dayCount),
+        true,
+        false,
+      ]);
+    }
+  }, [dayCount]);
 
   return (
     <Box

@@ -1,5 +1,5 @@
 export const initialState = {
-  dayCount: 0,
+  dayCount: 60,
 };
 
 export default function appReducer(state = initialState, action) {

@@ -35,6 +35,7 @@ const TimeSlider = () => {
           dispatch(setDayCount(value));
         }}
         min="0"
+        max="60"
         step="1"
       ></Slider>
       <Heading as="h4" sx={{ textAlign: 'center' }}>
