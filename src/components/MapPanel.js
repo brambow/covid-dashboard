@@ -17,6 +17,7 @@ const MapPanel = ({ viewWidth, countyData }) => {
     style: 'mapbox://styles/mapbox/light-v10',
     accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
     bounds: [-188.79565, 6.38169, -10.3621, 71.72543],
+    pitch: 40,
   };
 
   useEffect(() => {
@@ -87,6 +88,34 @@ const MapPanel = ({ viewWidth, countyData }) => {
           filter: ['match', ['get', 'date'], '2020-03-22', true, false],
         });
 
+        map.addLayer({
+          id: 'confirmed-cases-per-1000-3d',
+          type: 'fill-extrusion',
+          source: 'covid-polygon-src',
+          'source-layer': 'covid_polygons',
+          paint: {
+            'fill-extrusion-color': {
+              property: 'confirmed_cases_per_1000',
+              stops: [
+                [0, '#ffffff'],
+                [0.01, '#edf8e9'],
+                [0.025, '#bae4b3'],
+                [0.05, '#74c476'],
+                [0.1, '#31a354'],
+                [0.2, '#006d2c'],
+              ],
+            },
+            'fill-extrusion-height': [
+              '*',
+              ['get', 'confirmed_cases_per_1000'],
+              10000,
+            ],
+            'fill-extrusion-base': 0,
+            'fill-extrusion-opacity': 1,
+          },
+          filter: ['match', ['get', 'date'], '2020-03-22', true, false],
+        });
+
         map.addSource('covid-point-src', {
           type: 'vector',
           url: `${baseTileUrl}cartolab.9ocnb1rb`,
@@ -106,7 +135,7 @@ const MapPanel = ({ viewWidth, countyData }) => {
                 [100, 10],
                 [250, 15],
                 [500, 25],
-                [1000, 50],
+                [1000, 35],
               ],
             },
             'circle-color': 'orange',
