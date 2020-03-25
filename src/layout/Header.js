@@ -1,8 +1,7 @@
 import React from 'react';
-import { Flex, Button, Box, Heading, Text, useColorMode } from 'theme-ui';
+import { Flex, Box, Heading, Text } from 'theme-ui';
 import config from '../config';
-import { useDispatch } from 'react-redux';
-import { toggleColorMode } from '../redux/actions';
+import ColorModeButton from '../components/ColorModeButton';
 /**
  * Header Component
  *
@@ -10,8 +9,6 @@ import { toggleColorMode } from '../redux/actions';
  */
 
 const Header = () => {
-  const [colorMode, setColorMode] = useColorMode();
-  const dispatch = useDispatch();
   const title = config.appTitle;
   return (
     <Flex
@@ -58,27 +55,7 @@ const Header = () => {
           Last Update: {config.lastUpdate}
         </Text>
       </Box>
-      <Button
-        sx={{
-          borderColor: 'text',
-          borderStyle: 'solid',
-          borderWidth: 0.5,
-          bg: 'background',
-          borderRadius: 20,
-        }}
-        onClick={(e) => {
-          setColorMode(colorMode === 'default' ? 'dark' : 'default');
-          dispatch(
-            toggleColorMode(colorMode === 'default' ? 'dark' : 'default')
-          );
-        }}
-      >
-        {colorMode === 'default' ? (
-          <span style={{ color: '#000' }}>☾</span>
-        ) : (
-          <span>☼</span>
-        )}
-      </Button>
+      <ColorModeButton />
     </Flex>
   );
 };

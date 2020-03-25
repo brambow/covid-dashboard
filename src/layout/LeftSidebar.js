@@ -1,7 +1,5 @@
 import React from 'react';
 import { Flex, Box } from 'theme-ui';
-import SummaryStats from '../components/SummaryStats';
-import CumulativeChart from '../components/CumulativeChart';
 import TimeSlider from '../components/TimeSlider';
 import { LayerList } from '@cartolab/elements';
 

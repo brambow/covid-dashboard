@@ -9,12 +9,7 @@ const SummaryStats = () => {
         bg: 'text',
         color: 'primary',
         my: 2,
-        p: 3,
         mx: 3,
-        borderStyle: 'solid',
-        borderWidth: 1,
-        borderRadius: 20,
-        borderColor: 'text',
       }}
     >
       <Text sx={{ fontSize: 4, fontWeight: 'bold', p: 1 }}>

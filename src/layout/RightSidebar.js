@@ -1,30 +1,52 @@
 import React from 'react';
-import { Flex, Box } from 'theme-ui';
+import { Flex, Box, Link, Text, Card } from 'theme-ui';
 import SummaryStats from '../components/SummaryStats';
 import CumulativeChart from '../components/CumulativeChart';
 
 const RightSidebar = () => {
   return (
     <Box
-      className="app-sidebar"
+      className="app-sidebar-right"
       sx={{
         flex: 'none',
         bg: 'background',
         height: '100%',
         width: 450,
-        pt: 3,
-        pb: 4,
+        p: 4,
         mt: [64, 0],
         alignItems: 'start',
         '@media only screen and (max-width: 768px)': {
           display: 'none',
         },
+        '@media only screen and (max-width: 1600px)': {
+          height: '50%',
+          width: '100%',
+          my: 2,
+          paddingRight: 4,
+          // px: 4,
+        },
         overflowY: 'auto',
         overflowX: 'hidden',
       }}
     >
-      <Flex sx={{ flexDirection: 'column' }}>
+      <Flex
+        sx={{
+          flexDirection: 'column',
+          '@media only screen and (max-width: 1600px)': {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          },
+        }}
+      >
         <CumulativeChart />
+        <Card my={3}>
+          <Text sx={{ textAlign: 'left' }}>
+            The data for this dashboard comes from{' '}
+            <Link href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/">
+              usafacts.org
+            </Link>
+          </Text>
+        </Card>
       </Flex>
     </Box>
   );

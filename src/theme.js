@@ -35,8 +35,15 @@ const defaultTheme = {
     default: 4,
     circle: 99999,
   },
-  shadows: {
-    card: '0 0 4px rgba(0, 0, 0, .125)',
+  // shadows: {
+  //   card: '0 0 4px rgba(0, 0, 0, .125)',
+  // },
+  cards: {
+    primary: {
+      boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
+      borderRadius: 20,
+      p: [2, 4],
+    },
   },
   navBox: {
     width: '100%',

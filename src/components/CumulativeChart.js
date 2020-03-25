@@ -6,7 +6,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from 'recharts';
 import data from '../data/total_us_cases';
 import { Card, Heading } from 'theme-ui';
@@ -17,11 +16,7 @@ const CumulativeChart = () => {
       sx={{
         bg: 'background',
         color: 'primary',
-        p: 3,
-        my: 3,
-        mx: 3,
-        borderRadius: 20,
-        boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
+        width: '100%',
       }}
     >
       <Heading as="h3" color="text">
@@ -42,17 +37,16 @@ const CumulativeChart = () => {
         <XAxis dataKey="day_count" />
         <YAxis />
         <Tooltip />
-        {/* <Legend /> */}
-        {/* <Line
-          type="monotone"
-          dataKey="total_confirmed_cases"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        /> */}
         <Line
           type="monotone"
           dataKey="total_confirmed_cases"
           stroke="#82ca9d"
+          activeDot={{ r: 8 }}
+        />
+        <Line
+          type="monotone"
+          dataKey="total_deaths"
+          stroke="purple"
           activeDot={{ r: 8 }}
         />
       </LineChart>

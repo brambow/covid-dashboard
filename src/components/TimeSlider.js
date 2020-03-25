@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Card, Box, Slider, Text, Heading, Flex } from 'theme-ui';
 import { useSelector, useDispatch } from 'react-redux';
 import { setDayCount } from '../redux/actions';
@@ -8,10 +8,6 @@ const TimeSlider = () => {
   const dayCount = useSelector((state) => state.dayCount);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   console.log(dayCount);
-  // }, [dayCount]);
-
   return (
     <Card
       sx={{
@@ -20,10 +16,7 @@ const TimeSlider = () => {
         left: '1rem',
         zIndex: 2,
         bg: 'background',
-        p: 4,
         width: 400,
-        borderRadius: 20,
-        boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
       }}
     >
       <Heading as="h4" sx={{ textAlign: 'center' }}>
