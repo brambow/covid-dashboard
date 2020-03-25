@@ -1649,10 +1649,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cartolab/elements@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@cartolab/elements/-/elements-1.1.0.tgz#2aaa1e975ffc024a84f3bb6446a9e27120f4ef61"
-  integrity sha512-JY3tTGskGiPpAa+s4n+wxlMACNee/JJ0lMLPQwmtYFj78WnYf7+FJ1bBN/O6blN09VCj0/9HTq8wa+mN9kGy1A==
+"@cartolab/elements@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@cartolab/elements/-/elements-1.1.1.tgz#d9fcd43ddc550a3b36d3febae074bd420a1f4bd0"
+  integrity sha512-rruiMxzKb1pQehpeorbdM4GNzqW/L+IxECt348ejD7z+4Kpx1zeapgiVy/5bWzzpJ3hC76EWO21Kj6xCa7ycag==
   dependencies:
     "@mapbox/mapbox-gl-draw" "^1.1.2"
     "@mapbox/togeojson" "^0.16.0"
