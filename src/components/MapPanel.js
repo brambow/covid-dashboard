@@ -36,14 +36,34 @@ const MapPanel = ({ viewWidth }) => {
       title: {
         field: 'county_name',
       }, // popup title field
-      // intercept: function(properties) {
-      //   // mock getting some external data
-      //   return new Promise(function(resolve, reject) {
-      //     setTimeout(function() {
-      //       resolve(Object.assign(properties, { source: 'intercept' }));
-      //     }, 150);
-      //   });
-      // },
+      attributes: [
+        {
+          field: 'date', // original field name
+          label: 'Date', // desired label
+          type: 'text', // text, link, image
+        },
+        {
+          field: 'confirmed_cases',
+          label: 'Confirmed Cases',
+          type: 'text',
+        },
+        {
+          field: 'deaths',
+          label: 'Deaths',
+          type: 'text',
+        },
+        {
+          field: 'confirmed_cases_per_1000',
+          label: 'Cases per 1000',
+          type: 'text',
+        },
+      ],
+    },
+    {
+      layerId: 'confirmed-cases-per-1000-3d', // id of layer on map
+      title: {
+        field: 'county_name',
+      }, // popup title field
       attributes: [
         {
           field: 'date', // original field name
@@ -114,6 +134,22 @@ const MapPanel = ({ viewWidth }) => {
     if (mapExists(map)) {
       map.on('load', () => {
         addMapLayers(map);
+
+        map.on('mouseenter', 'confirmed-cases-per-1000', (e) => {
+          map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', 'confirmed-cases-per-1000', (e) => {
+          map.getCanvas().style.cursor = '';
+        });
+
+        map.on('mouseenter', 'confirmed-cases-per-1000-3d', (e) => {
+          map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', 'confirmed-cases-per-1000-3d', (e) => {
+          map.getCanvas().style.cursor = '';
+        });
       });
     }
   }, [map]);
