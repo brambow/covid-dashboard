@@ -21,6 +21,11 @@ const DataInfo = () => {
         Community Survey 5-year Data (2018).
       </Text>
       <Text sx={{ pt: 2, textAlign: 'left' }}>
+        The goal for this project was to build a data dashboard for the COVID-19
+        pandemic that demonstrates some neat Mapbox features and also adds
+        additional data contexts beyond plain counts.
+      </Text>
+      <Text sx={{ pt: 2, textAlign: 'left' }}>
         This application was built with React, MapboxGL, ThemeUI, and several
         other libraries. Check out the{' '}
         <Link
