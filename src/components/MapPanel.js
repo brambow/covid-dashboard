@@ -18,6 +18,7 @@ const MapPanel = ({ viewWidth }) => {
   const dayCount = useSelector((state) => state.dayCount);
 
   const colorMode = useSelector((state) => state.colorMode);
+  const mapMode = useSelector((state) => state.mapMode);
 
   const mapOptions = {
     container: 'map',
@@ -67,6 +68,34 @@ const MapPanel = ({ viewWidth }) => {
       ],
     },
   ];
+
+  useEffect(() => {
+    if (mapExists(map)) {
+      if (mapMode === '3D') {
+        map.setPitch(50);
+        map.setLayoutProperty('confirmed-cases-per-1000', 'visibility', 'none');
+        map.setLayoutProperty(
+          'confirmed-cases-per-1000-3d',
+          'visibility',
+          'visible'
+        );
+      } else {
+        map.on('style.load', () => {
+          map.setPitch(0);
+          map.setLayoutProperty(
+            'confirmed-cases-per-1000',
+            'visibility',
+            'visible'
+          );
+          map.setLayoutProperty(
+            'confirmed-cases-per-1000-3d',
+            'visibility',
+            'none'
+          );
+        });
+      }
+    }
+  }, [mapMode, map]);
 
   useEffect(() => {
     if (mapExists(map)) {

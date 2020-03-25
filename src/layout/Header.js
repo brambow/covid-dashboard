@@ -2,6 +2,7 @@ import React from 'react';
 import { Flex, Box, Heading, Text } from 'theme-ui';
 import config from '../config';
 import ColorModeButton from '../components/ColorModeButton';
+import MapModeButton from '../components/MapModeButton';
 /**
  * Header Component
  *
@@ -55,6 +56,7 @@ const Header = () => {
           Last Update: {config.lastUpdate}
         </Text>
       </Box>
+      <MapModeButton />
       <ColorModeButton />
     </Flex>
   );

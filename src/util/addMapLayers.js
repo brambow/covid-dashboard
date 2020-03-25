@@ -119,11 +119,11 @@ export default function addMapLayers(map) {
       'fill-extrusion-color': {
         property: 'confirmed_cases_per_1000',
         stops: [
-          [0, '#edf8e9'],
-          [0.15, '#bae4b3'],
-          [0.57, '#74c476'],
-          [1.93, '#31a354'],
-          [5.54, '#006d2c'],
+          [0.1, '#edf8e9'],
+          [0.25, '#bae4b3'],
+          [1, '#74c476'],
+          [2, '#31a354'],
+          [3, '#006d2c'],
         ],
       },
       'fill-extrusion-height': [
