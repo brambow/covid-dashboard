@@ -99,7 +99,7 @@ const MapPanel = ({ viewWidth }) => {
         mapOptions={mapOptions}
       >
         <Zoom />
-        <MapInfo bottom="1.25rem" left="25%" />
+        {/* <MapInfo bottom="1.25rem" left="25%" /> */}
       </Map>
     </Box>
   );
