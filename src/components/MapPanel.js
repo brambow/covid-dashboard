@@ -1,5 +1,11 @@
 import React, { useContext, useEffect } from 'react';
-import { ElementsContext, Map, Zoom, MapInfo } from '@cartolab/elements';
+import {
+  ElementsContext,
+  Map,
+  Zoom,
+  MapInfo,
+  MapPopup,
+} from '@cartolab/elements';
 import { Box } from 'theme-ui';
 import 'mapbox-gl/dist/mapbox-gl.css'; // we need the mapbox css
 import mapExists from '../util/mapExists';
@@ -22,6 +28,45 @@ const MapPanel = ({ viewWidth }) => {
     bounds: [-129.19948, 21.03198, -63.46102, 53.76579],
     // pitch: 40,
   };
+
+  const popupLayers = [
+    {
+      layerId: 'confirmed-cases-per-1000', // id of layer on map
+      title: {
+        field: 'county_name',
+      }, // popup title field
+      // intercept: function(properties) {
+      //   // mock getting some external data
+      //   return new Promise(function(resolve, reject) {
+      //     setTimeout(function() {
+      //       resolve(Object.assign(properties, { source: 'intercept' }));
+      //     }, 150);
+      //   });
+      // },
+      attributes: [
+        {
+          field: 'date', // original field name
+          label: 'Date', // desired label
+          type: 'text', // text, link, image
+        },
+        {
+          field: 'confirmed_cases',
+          label: 'Confirmed Cases',
+          type: 'text',
+        },
+        {
+          field: 'deaths',
+          label: 'Deaths',
+          type: 'text',
+        },
+        {
+          field: 'confirmed_cases_per_1000',
+          label: 'Cases per 1000',
+          type: 'text',
+        },
+      ],
+    },
+  ];
 
   useEffect(() => {
     if (mapExists(map)) {
@@ -98,6 +143,7 @@ const MapPanel = ({ viewWidth }) => {
       >
         <Zoom />
         {/* <MapInfo bottom="1.25rem" left="25%" /> */}
+        <MapPopup layers={popupLayers} />
       </Map>
     </Box>
   );
