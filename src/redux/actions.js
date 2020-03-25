@@ -11,3 +11,10 @@ export function toggleColorMode(mode) {
     payload: mode,
   };
 }
+
+export function toggleMapMode(mode) {
+  return {
+    type: 'SET_MAP_MODE',
+    payload: mode,
+  };
+}
