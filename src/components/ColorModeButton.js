@@ -15,17 +15,14 @@ const ColorModeButton = () => {
         borderWidth: 0.5,
         bg: 'background',
         borderRadius: 20,
+        color: 'text',
       }}
       onClick={(e) => {
         setColorMode(colorMode === 'default' ? 'dark' : 'default');
         dispatch(toggleColorMode(colorMode === 'default' ? 'dark' : 'default'));
       }}
     >
-      {colorMode === 'default' ? (
-        <FaMoon style={{ color: '#000' }} />
-      ) : (
-        <FaSun></FaSun>
-      )}
+      {colorMode === 'default' ? <FaMoon /> : <FaSun></FaSun>}
     </Button>
   );
 };

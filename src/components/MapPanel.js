@@ -80,8 +80,8 @@ const MapPanel = ({ viewWidth }) => {
           'visible'
         );
       } else {
+        map.setPitch(0);
         map.on('style.load', () => {
-          map.setPitch(0);
           map.setLayoutProperty(
             'confirmed-cases-per-1000',
             'visibility',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'theme-ui';
+import { Button, Text } from 'theme-ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMapMode } from '../redux/actions';
 
@@ -14,12 +14,13 @@ const MapModeButton = () => {
         borderWidth: 0.5,
         bg: 'background',
         borderRadius: 20,
+        color: 'text',
       }}
       onClick={(e) => {
         dispatch(toggleMapMode(mapMode === '2D' ? '3D' : '2D'));
       }}
     >
-      {mapMode === '2D' ? <span>3D</span> : <span>2D</span>}
+      {mapMode === '2D' ? '3D' : '2D'}
     </Button>
   );
 };
