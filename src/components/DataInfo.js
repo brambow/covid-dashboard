@@ -1,0 +1,38 @@
+import React from 'react';
+import { Card, Text, Link } from 'theme-ui';
+
+const DataInfo = () => {
+  return (
+    <Card my={[0, 0, 1, 3]} mx={[0, 0, 4, 0]}>
+      <Text sx={{ textAlign: 'left' }}>
+        The virus counts for this dashboard comes from{' '}
+        <Link
+          variant="primary"
+          target="_blank"
+          href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"
+        >
+          usafacts.org
+        </Link>
+        . Please follow this link to review where this data comes from and the
+        accuracy.
+      </Text>
+      <Text sx={{ pt: 2, textAlign: 'left' }}>
+        The demographic data is sourced from the US Census Bureau American
+        Community Survey 5-year Data (2018).
+      </Text>
+      <Text sx={{ pt: 2, textAlign: 'left' }}>
+        This application was built with React, MapboxGL, ThemeUI, and several
+        other libraries. Check out the{' '}
+        <Link
+          variant="primary"
+          target="_blank"
+          href="https://github.com/brambow/covid-dashboard"
+        >
+          source code.
+        </Link>
+      </Text>
+    </Card>
+  );
+};
+
+export default DataInfo;

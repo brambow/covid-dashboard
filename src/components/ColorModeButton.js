@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, useColorMode } from 'theme-ui';
 import { useDispatch } from 'react-redux';
 import { toggleColorMode } from '../redux/actions';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const ColorModeButton = () => {
   const [colorMode, setColorMode] = useColorMode();
@@ -21,9 +22,9 @@ const ColorModeButton = () => {
       }}
     >
       {colorMode === 'default' ? (
-        <span style={{ color: '#000' }}>☾</span>
+        <FaMoon style={{ color: '#000' }} />
       ) : (
-        <span>☼</span>
+        <FaSun></FaSun>
       )}
     </Button>
   );

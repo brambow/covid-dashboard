@@ -56,6 +56,9 @@ const defaultTheme = {
     },
   },
   links: {
+    primary: {
+      color: 'primary',
+    },
     nav: {
       textAlign: 'start',
       fontSize: 4,

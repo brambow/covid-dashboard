@@ -2,6 +2,7 @@ import React from 'react';
 import { Flex, Box, Link, Text, Card } from 'theme-ui';
 import SummaryStats from '../components/SummaryStats';
 import CumulativeChart from '../components/CumulativeChart';
+import DataInfo from '../components/DataInfo';
 
 const RightSidebar = () => {
   return (
@@ -39,19 +40,7 @@ const RightSidebar = () => {
         }}
       >
         <CumulativeChart />
-        <Card my={[0, 0, 1, 3]} mx={[0, 0, 4, 0]}>
-          <Text sx={{ textAlign: 'left' }}>
-            The data for this dashboard comes from{' '}
-            <Link
-              target="_blank"
-              href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"
-            >
-              usafacts.org
-            </Link>
-            . Please follow this link to review where this data comes from and
-            the accuracy.
-          </Text>
-        </Card>
+        <DataInfo />
       </Flex>
     </Box>
   );
