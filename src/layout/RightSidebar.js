@@ -12,12 +12,12 @@ const RightSidebar = () => {
         bg: 'background',
         height: '100%',
         width: 450,
-        p: 4,
-        mt: [64, 0],
+        p: [4],
+        mt: 0,
         alignItems: 'start',
-        '@media only screen and (max-width: 768px)': {
-          display: 'none',
-        },
+        // '@media only screen and (max-width: 768px)': {
+        //   display: 'none',
+        // },
         '@media only screen and (max-width: 1824px)': {
           height: '50%',
           width: '100%',
@@ -25,7 +25,7 @@ const RightSidebar = () => {
           paddingRight: 4,
           // px: 4,
         },
-        overflowY: 'auto',
+        overflowY: 'hidden',
         overflowX: 'hidden',
       }}
     >
@@ -39,7 +39,7 @@ const RightSidebar = () => {
         }}
       >
         <CumulativeChart />
-        <Card my={3}>
+        <Card my={[0, 0, 1, 3]} mx={[0, 0, 4, 0]}>
           <Text sx={{ textAlign: 'left' }}>
             The data for this dashboard comes from{' '}
             <Link

@@ -3,7 +3,6 @@ import { ElementsContext, Map, Zoom, MapInfo } from '@cartolab/elements';
 import { Box } from 'theme-ui';
 import 'mapbox-gl/dist/mapbox-gl.css'; // we need the mapbox css
 import mapExists from '../util/mapExists';
-import config from '../config';
 import { useSelector } from 'react-redux';
 import addMapLayers from '../util/addMapLayers';
 
@@ -80,13 +79,14 @@ const MapPanel = ({ viewWidth }) => {
         width: viewWidth,
         borderRadius: 20,
         boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
-        // '@media only screen and (max-width: 768px)': {
-        //   height: '100%',
-        //   width: '100%',
-        // },
+        '@media only screen and (max-width: 768px)': {
+          height: '100%',
+          width: '100%',
+        },
         '@media only screen and (max-width: 1824px, min-width: 769px)': {
           height: '50%',
         },
+        zIndex: 3,
       }}
     >
       <Map

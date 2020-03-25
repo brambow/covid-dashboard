@@ -12,6 +12,7 @@ const defaultTheme = {
       },
     },
   },
+  breakpoints: ['768px', '1224px', '1824px'],
   fonts: {
     body: 'Verdana, sans-serif',
     heading: 'Verdana, sans-serif',
