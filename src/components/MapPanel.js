@@ -79,12 +79,11 @@ const MapPanel = ({ viewWidth }) => {
         width: viewWidth,
         borderRadius: 20,
         boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
-        '@media only screen and (max-width: 768px)': {
-          height: '100%',
-          width: '100%',
-        },
-        '@media only screen and (max-width: 1824px, min-width: 769px)': {
+        '@media only screen and (max-width: 1824px, min-width: 884px)': {
           height: '50%',
+        },
+        '@media only screen and (max-width: 884px)': {
+          height: '400px',
         },
         zIndex: 3,
       }}

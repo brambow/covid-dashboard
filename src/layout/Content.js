@@ -4,6 +4,8 @@ import MapPanel from '../components/MapPanel';
 import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
 import { useMediaQuery } from 'react-responsive';
+import TimeSlider from '../components/TimeSlider';
+import CumulativeChart from '../components/CumulativeChart';
 
 const Content = ({ colorMode }) => {
   const [viewHeight, setViewHeight] = useState(window.innerHeight);
@@ -15,11 +17,8 @@ const Content = ({ colorMode }) => {
   const isDesktopOrLaptop = useMediaQuery({
     minDeviceWidth: 1224,
   });
-  // const isTablet = useMediaQuery({
-  //   query: '(max-width: 1223px, minWidth: 769px)',
-  // });
-  const isMobile = useMediaQuery({
-    maxDeviceWidth: 768,
+  const isTabletOrMobile = useMediaQuery({
+    maxWidth: 1224,
   });
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const Content = ({ colorMode }) => {
 
   return (
     <React.Fragment>
-      {isBigScreen && (
+      {isDesktopOrLaptop && isBigScreen && (
         <Flex
           id="covid-app-content"
           sx={{
@@ -55,7 +54,7 @@ const Content = ({ colorMode }) => {
           </Box>
         </Flex>
       )}
-      {isDesktopOrLaptop && (
+      {isDesktopOrLaptop && !isBigScreen && (
         <Flex
           id="covid-app-content"
           sx={{
@@ -73,6 +72,33 @@ const Content = ({ colorMode }) => {
             >
               <MapPanel colorMode={colorMode} viewWidth={viewWidth - 450} />
               <RightSidebar />
+            </Flex>
+          </Box>
+        </Flex>
+      )}{' '}
+      {isTabletOrMobile && (
+        <Flex
+          id="covid-app-content"
+          sx={{
+            height: viewHeight - 60,
+            width: '100vw',
+          }}
+        >
+          <Box css={{ height: '100%' }}>
+            <Flex
+              css={{
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                height: '100%',
+              }}
+            >
+              <MapPanel colorMode={colorMode} viewWidth={'100vw'} />
+              <Box>
+                <TimeSlider />
+              </Box>
+              <Box mt={5}>
+                <CumulativeChart></CumulativeChart>
+              </Box>
             </Flex>
           </Box>
         </Flex>
