@@ -18,7 +18,7 @@ const RightSidebar = () => {
         '@media only screen and (max-width: 768px)': {
           display: 'none',
         },
-        '@media only screen and (max-width: 1600px)': {
+        '@media only screen and (max-width: 1824px)': {
           height: '50%',
           width: '100%',
           my: 2,
@@ -32,7 +32,7 @@ const RightSidebar = () => {
       <Flex
         sx={{
           flexDirection: 'column',
-          '@media only screen and (max-width: 1600px)': {
+          '@media only screen and (max-width: 1824px)': {
             flexDirection: 'row',
             justifyContent: 'space-between',
           },
