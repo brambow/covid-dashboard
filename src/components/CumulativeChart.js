@@ -35,7 +35,7 @@ const CumulativeChart = () => {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="day_count" />
-        <YAxis />
+        <YAxis domain={[0, 60000]} />
         <Tooltip />
         <Line
           type="monotone"

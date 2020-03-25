@@ -42,9 +42,14 @@ const RightSidebar = () => {
         <Card my={3}>
           <Text sx={{ textAlign: 'left' }}>
             The data for this dashboard comes from{' '}
-            <Link href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/">
+            <Link
+              target="_blank"
+              href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"
+            >
               usafacts.org
             </Link>
+            . Please follow this link to review where this data comes from and
+            the accuracy.
           </Text>
         </Card>
       </Flex>
