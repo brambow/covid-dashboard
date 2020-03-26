@@ -90,9 +90,9 @@ const MapPanel = ({ viewWidth }) => {
     },
   ];
 
-  // useEffect(() => {
-  //   mapboxgl.clearStorage();
-  // }, []);
+  useEffect(() => {
+    mapboxgl.clearStorage();
+  }, []);
 
   useEffect(() => {
     if (mapExists(map)) {

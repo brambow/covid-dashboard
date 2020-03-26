@@ -1,8 +1,11 @@
 import React from 'react';
-import { Flex, Box, Heading, Text } from 'theme-ui';
+import { Flex, Box, Heading, Text, Image } from 'theme-ui';
 import config from '../config';
 import ColorModeButton from '../components/ColorModeButton';
 import MapModeButton from '../components/MapModeButton';
+import logo from '../logo.png';
+import darkLogo from '../logo_dark.png';
+import { useSelector } from 'react-redux';
 /**
  * Header Component
  *
@@ -10,6 +13,7 @@ import MapModeButton from '../components/MapModeButton';
  */
 
 const Header = () => {
+  const colorMode = useSelector((state) => state.colorMode);
   const title = config.appTitle;
   return (
     <Flex
@@ -23,26 +27,32 @@ const Header = () => {
       }}
     >
       <Box>
-        <Heading
-          sx={{
-            '@media only screen and (max-width: 768px)': {
-              display: 'none',
-            },
-          }}
-          as="h2"
-        >
-          {title}
-        </Heading>
-        <Heading
-          sx={{
-            '@media only screen and (min-width: 769px)': {
-              display: 'none',
-            },
-          }}
-          as="h4"
-        >
-          {title}
-        </Heading>
+        <Flex>
+          <Image
+            sx={{ height: 50 }}
+            src={colorMode === 'default' ? logo : darkLogo}
+          />
+          <Heading
+            sx={{
+              '@media only screen and (max-width: 768px)': {
+                display: 'none',
+              },
+            }}
+            as="h2"
+          >
+            {title}
+          </Heading>
+          <Heading
+            sx={{
+              '@media only screen and (min-width: 769px)': {
+                display: 'none',
+              },
+            }}
+            as="h4"
+          >
+            {title}
+          </Heading>
+        </Flex>
       </Box>
       <Box>
         <Text
@@ -56,8 +66,12 @@ const Header = () => {
           Last Update: {config.lastUpdate}
         </Text>
       </Box>
-      <MapModeButton />
-      <ColorModeButton />
+      <Box>
+        <Flex>
+          <MapModeButton />
+          <ColorModeButton />
+        </Flex>
+      </Box>
     </Flex>
   );
 };
