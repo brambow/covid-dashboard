@@ -39,17 +39,8 @@ const Content = ({ colorMode }) => {
           }}
         >
           <LeftSidebar />
-          <Box css={{ height: '100%' }}>
-            <Flex
-              css={{
-                flexDirection: 'row',
-                height: '100%',
-              }}
-            >
-              <MapPanel colorMode={colorMode} viewWidth={viewWidth - 900} />
-              <RightSidebar />
-            </Flex>
-          </Box>
+          <MapPanel colorMode={colorMode} viewWidth={viewWidth - 900} />
+          <RightSidebar />
         </Flex>
       )}
       {isDesktopOrLaptop && !isBigScreen && (
@@ -61,17 +52,8 @@ const Content = ({ colorMode }) => {
           }}
         >
           <LeftSidebar width={300} />
-          <Box css={{ height: '100%' }}>
-            <Flex
-              css={{
-                flexDirection: 'row',
-                height: '100%',
-              }}
-            >
-              <MapPanel colorMode={colorMode} viewWidth={viewWidth} />
-              <RightSidebar width={300} />
-            </Flex>
-          </Box>
+          <MapPanel colorMode={colorMode} viewWidth={viewWidth} />
+          <RightSidebar width={300} />
         </Flex>
       )}{' '}
       {isTabletOrMobile && (
