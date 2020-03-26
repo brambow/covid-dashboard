@@ -3,7 +3,11 @@ import { Card, Text, Link } from 'theme-ui';
 
 const DataInfo = () => {
   return (
-    <Card my={[0, 0, 1, 3]} mx={[0, 0, 4, 0]}>
+    <Card
+      my={4}
+      // mx={[0, 0, 4, 0]}
+      sx={{ fontSize: [0, 1, 2], width: '100%' }}
+    >
       <Text sx={{ textAlign: 'left' }}>
         The virus counts for this dashboard comes from{' '}
         <Link

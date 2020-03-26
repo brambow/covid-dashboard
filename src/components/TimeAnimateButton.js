@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button } from 'theme-ui';
 import { useDispatch } from 'react-redux';
 import { setDayCount } from '../redux/actions';
+import { FaPlay } from 'react-icons/fa';
 
 const TimeAnimateButton = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const TimeAnimateButton = () => {
         play();
       }}
     >
-      ▶️
+      <FaPlay />
     </Button>
   );
 };

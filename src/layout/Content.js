@@ -28,8 +28,6 @@ const Content = ({ colorMode }) => {
     });
   }, []);
 
-  console.log(isBigScreen, isDesktopOrLaptop);
-
   return (
     <React.Fragment>
       {isDesktopOrLaptop && isBigScreen && (
@@ -62,16 +60,16 @@ const Content = ({ colorMode }) => {
             width: viewWidth,
           }}
         >
-          <LeftSidebar />
+          <LeftSidebar width={300} />
           <Box css={{ height: '100%' }}>
             <Flex
               css={{
-                flexDirection: 'column',
+                flexDirection: 'row',
                 height: '100%',
               }}
             >
-              <MapPanel colorMode={colorMode} viewWidth={viewWidth - 450} />
-              <RightSidebar />
+              <MapPanel colorMode={colorMode} viewWidth={viewWidth} />
+              <RightSidebar width={300} />
             </Flex>
           </Box>
         </Flex>

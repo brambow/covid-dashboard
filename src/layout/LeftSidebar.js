@@ -3,7 +3,7 @@ import { Flex, Box } from 'theme-ui';
 import TimeSlider from '../components/TimeSlider';
 import { LayerList } from '@cartolab/elements';
 
-const LeftSidebar = () => {
+const LeftSidebar = ({ width }) => {
   return (
     <Box
       className="app-sidebar"
@@ -11,7 +11,7 @@ const LeftSidebar = () => {
         flex: 'none',
         bg: 'background',
         height: '100%',
-        width: 450,
+        width: width || 450,
         pt: 3,
         pb: 0,
         mt: [64, 0],

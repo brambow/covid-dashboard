@@ -17,6 +17,9 @@ const TimeSlider = () => {
         zIndex: 2,
         bg: 'background',
         width: 400,
+        '@media only screen and (max-width: 1824px)': {
+          width: 280,
+        },
       }}
     >
       <Heading as="h4" sx={{ textAlign: 'center' }}>

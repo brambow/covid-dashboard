@@ -43,7 +43,8 @@ const defaultTheme = {
     primary: {
       boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
       borderRadius: 20,
-      p: [2, 4],
+      p: [0, 1, 1, 4],
+      fontSize: [0, 1, 1, 3],
     },
   },
   navBox: {

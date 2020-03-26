@@ -9,10 +9,12 @@ import {
 } from 'recharts';
 import data from '../data/total_us_cases';
 import { Card, Heading } from 'theme-ui';
+import abbreviateNumber from '../util/abbreviateNumber';
 
-const CumulativeChart = () => {
+const CumulativeChart = ({ width }) => {
   return (
     <Card
+      style={{ paddingLeft: 0 }}
       sx={{
         bg: 'background',
         color: 'primary',
@@ -23,19 +25,24 @@ const CumulativeChart = () => {
         Total US Cases
       </Heading>
       <LineChart
-        width={350}
+        width={width - 50 || 350}
         height={300}
         data={data}
         margin={{
           top: 5,
           right: 5,
-          left: 5,
+          // left: 5,
           bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="day_count" />
-        <YAxis domain={[0, 60000]} />
+        <YAxis
+          domain={[0, 50000]}
+          tickFormatter={(tick) => {
+            return abbreviateNumber(tick);
+          }}
+        />
         <Tooltip />
         <Line
           type="monotone"
