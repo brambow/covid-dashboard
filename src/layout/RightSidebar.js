@@ -26,8 +26,8 @@ const RightSidebar = ({ width }) => {
         //   paddingRight: 4,
         //   // px: 4,
         // },
-        // overflowY: 'hidden',
-        // overflowX: 'hidden',
+        overflowY: 'hidden',
+        overflowX: 'hidden',
       }}
     >
       <Flex
