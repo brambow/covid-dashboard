@@ -3,6 +3,7 @@ import { Button } from 'theme-ui';
 import { useDispatch } from 'react-redux';
 import { setDayCount } from '../redux/actions';
 import { FaPlay } from 'react-icons/fa';
+import config from '../config';
 
 const TimeAnimateButton = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const TimeAnimateButton = () => {
     dispatch(setDayCount(day));
 
     setInterval(() => {
-      if (day > 60) return false;
+      if (day > config.currentDayCount) return false;
       dispatch(setDayCount(day));
       day = day + 1;
     }, 250);

@@ -38,7 +38,8 @@ const CumulativeChart = ({ width }) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="day_count" />
         <YAxis
-          domain={[0, 50000]}
+          dataKey="total_confirmed_cases"
+          domain={[0, 55000]}
           tickFormatter={(tick) => {
             return abbreviateNumber(tick);
           }}

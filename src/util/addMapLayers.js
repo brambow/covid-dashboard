@@ -1,5 +1,7 @@
+import config from '../config';
+
 const baseTileUrl = 'mapbox://';
-const maxDayCount = 60;
+const maxDayCount = config.currentDayCount;
 
 export default function addMapLayers(map) {
   try {

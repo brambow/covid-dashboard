@@ -11,6 +11,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // we need the mapbox css
 import mapExists from '../util/mapExists';
 import { useSelector } from 'react-redux';
 import addMapLayers from '../util/addMapLayers';
+import mapboxgl from 'mapbox-gl';
 
 const MapPanel = ({ viewWidth }) => {
   const ctx = useContext(ElementsContext);
@@ -88,6 +89,10 @@ const MapPanel = ({ viewWidth }) => {
       ],
     },
   ];
+
+  // useEffect(() => {
+  //   mapboxgl.clearStorage();
+  // }, []);
 
   useEffect(() => {
     if (mapExists(map)) {

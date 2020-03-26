@@ -1,5 +1,7 @@
+import config from '../config';
+
 export const initialState = {
-  dayCount: 60,
+  dayCount: config.currentDayCount,
   colorMode: localStorage.getItem('theme-ui-color-mode') ?? 'default',
   mapMode: '2D',
 };
