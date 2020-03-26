@@ -39,7 +39,7 @@ const CumulativeChart = ({ width }) => {
         <XAxis dataKey="day_count" />
         <YAxis
           dataKey="total_confirmed_cases"
-          domain={[0, 55000]}
+          domain={[0, parseInt(data[data.length - 1].total_confirmed_cases)]}
           tickFormatter={(tick) => {
             return abbreviateNumber(tick);
           }}
