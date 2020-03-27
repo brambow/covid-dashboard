@@ -9,16 +9,15 @@ const DataInfo = () => {
       sx={{ fontSize: [0, 1, 2], width: '100%' }}
     >
       <Text sx={{ textAlign: 'left' }}>
-        The virus counts for this dashboard comes from{' '}
+        The virus counts for this dashboard are provided by the{' '}
         <Link
           variant="primary"
           target="_blank"
-          href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"
+          href="https://github.com/nytimes/covid-19-data"
         >
-          usafacts.org
+          New York Times
         </Link>
-        . Please follow this link to review where this data comes from and the
-        accuracy.
+        .
       </Text>
       <Text sx={{ pt: 2, textAlign: 'left' }}>
         The demographic data is sourced from the US Census Bureau American
