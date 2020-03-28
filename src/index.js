@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ElementsProvider } from '@cartolab/elements';
 import theme from './theme';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import appReducer from './redux/reducer';
 import { ThemeProvider } from 'theme-ui';

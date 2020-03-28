@@ -1,11 +1,12 @@
 const defaultTheme = {
   colors: {
     text: '#0B132B',
-    background: '#ffffff',
+    background: '#efefef',
     primary: '#5BC0BE',
     secondary: '1C2541',
     highlight: '#3A506B',
-    danger: '#FF1763',
+    cases: '#FF9F1C',
+    deaths: '#E71D36',
     modes: {
       dark: {
         text: '#ffffff',

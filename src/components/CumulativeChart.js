@@ -8,10 +8,12 @@ import {
   Tooltip,
 } from 'recharts';
 import data from '../data/total_us_cases';
-import { Card, Heading } from 'theme-ui';
+import { Card, Heading, useThemeUI } from 'theme-ui';
 import abbreviateNumber from '../util/abbreviateNumber';
 
 const CumulativeChart = ({ width }) => {
+  const { theme } = useThemeUI();
+
   return (
     <Card
       style={{ paddingLeft: 0 }}
@@ -48,13 +50,13 @@ const CumulativeChart = ({ width }) => {
         <Line
           type="monotone"
           dataKey="total_confirmed_cases"
-          stroke="#82ca9d"
+          stroke={theme.colors.cases}
           activeDot={{ r: 8 }}
         />
         <Line
           type="monotone"
           dataKey="total_deaths"
-          stroke="purple"
+          stroke={theme.colors.deaths}
           activeDot={{ r: 8 }}
         />
       </LineChart>

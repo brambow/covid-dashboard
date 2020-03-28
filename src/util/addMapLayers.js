@@ -166,7 +166,7 @@ export default function addMapLayers(map) {
           [5000, 40],
         ],
       },
-      'circle-color': 'orange',
+      'circle-color': '#FF9F1C',
       'circle-opacity': 0.6,
     },
     filter: ['match', ['get', 'day_count'], maxDayCount, true, false],
