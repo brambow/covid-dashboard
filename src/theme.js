@@ -5,6 +5,7 @@ const defaultTheme = {
     primary: '#5BC0BE',
     secondary: '1C2541',
     highlight: '#3A506B',
+    danger: '#FF1763',
     modes: {
       dark: {
         text: '#ffffff',

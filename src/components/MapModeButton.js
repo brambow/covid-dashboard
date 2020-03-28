@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text } from 'theme-ui';
+import { Button } from 'theme-ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMapMode } from '../redux/actions';
 

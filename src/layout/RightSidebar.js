@@ -3,6 +3,7 @@ import { Flex, Box } from 'theme-ui';
 // import SummaryStats from '../components/SummaryStats';
 import CumulativeChart from '../components/CumulativeChart';
 import DataInfo from '../components/DataInfo';
+import CountsCard from '../components/CountsCard';
 
 const RightSidebar = ({ width }) => {
   return (
@@ -36,6 +37,7 @@ const RightSidebar = ({ width }) => {
           width: '100%',
         }}
       >
+        <CountsCard />
         <CumulativeChart width={width} />
         <DataInfo />
       </Flex>
