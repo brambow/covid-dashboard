@@ -6,6 +6,7 @@ import MapModeButton from '../components/MapModeButton';
 import logo from '../logo.png';
 import darkLogo from '../logo_dark.png';
 import { useSelector } from 'react-redux';
+import ViewLevelButton from '../components/ViewLevelButton';
 /**
  * Header Component
  *
@@ -54,6 +55,7 @@ const Header = () => {
           </Heading>
         </Flex>
       </Box>
+      <Box></Box>
       <Box>
         <Text
           sx={{
@@ -68,6 +70,7 @@ const Header = () => {
       </Box>
       <Box>
         <Flex>
+          <ViewLevelButton />
           <MapModeButton />
           <ColorModeButton />
         </Flex>

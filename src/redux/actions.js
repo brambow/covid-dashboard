@@ -18,3 +18,10 @@ export function toggleMapMode(mode) {
     payload: mode,
   };
 }
+
+export function setViewLevel(view) {
+  return {
+    type: 'SET_VIEW_LEVEL',
+    payload: view,
+  };
+}

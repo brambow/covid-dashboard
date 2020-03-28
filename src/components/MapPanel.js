@@ -12,6 +12,7 @@ import mapExists from '../util/mapExists';
 import { useSelector } from 'react-redux';
 import addMapLayers from '../util/addMapLayers';
 import mapboxgl from 'mapbox-gl';
+import addStateModeMapLayers from '../util/addStateModeMapLayers';
 
 const MapPanel = ({ viewWidth }) => {
   const ctx = useContext(ElementsContext);
@@ -20,6 +21,7 @@ const MapPanel = ({ viewWidth }) => {
 
   const colorMode = useSelector((state) => state.colorMode);
   const mapMode = useSelector((state) => state.mapMode);
+  const viewLevel = useSelector((state) => state.viewLevel);
 
   const mapOptions = {
     container: 'map',
@@ -90,9 +92,9 @@ const MapPanel = ({ viewWidth }) => {
     },
   ];
 
-  useEffect(() => {
-    mapboxgl.clearStorage();
-  }, []);
+  // useEffect(() => {
+  //   mapboxgl.clearStorage();
+  // }, []);
 
   useEffect(() => {
     if (mapExists(map)) {
@@ -184,6 +186,14 @@ const MapPanel = ({ viewWidth }) => {
       ]);
     }
   }, [dayCount]);
+
+  useEffect(() => {
+    if (mapExists(map)) {
+      if (viewLevel === 'states') {
+        addStateModeMapLayers(map);
+      }
+    }
+  }, [viewLevel, map]);
 
   return (
     <Box

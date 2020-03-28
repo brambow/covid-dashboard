@@ -4,6 +4,7 @@ export const initialState = {
   dayCount: config.currentDayCount,
   colorMode: localStorage.getItem('theme-ui-color-mode') ?? 'default',
   mapMode: '2D',
+  viewLevel: 'counties',
 };
 
 export default function appReducer(state = initialState, action) {
@@ -22,6 +23,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         mapMode: action.payload,
+      };
+    case 'SET_VIEW_LEVEL':
+      return {
+        ...state,
+        viewLevel: action.payload,
       };
     default:
       return { ...state };
