@@ -190,6 +190,7 @@ const MapPanel = ({ viewWidth }) => {
       className="map-panel"
       sx={{
         marginTop: [0, 4],
+        marginLeft: [0, 4, 4, 0],
         height: '90%',
         width: viewWidth,
         borderRadius: 20,
