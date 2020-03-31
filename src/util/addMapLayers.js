@@ -96,11 +96,11 @@ export default function addMapLayers(map) {
       'fill-color': {
         property: 'confirmed_cases_per_1000',
         stops: [
-          [0.1, '#edf8e9'],
-          [0.25, '#bae4b3'],
+          [0.15, '#edf8e9'],
+          [0.5, '#bae4b3'],
           [1, '#74c476'],
-          [2, '#31a354'],
-          [3, '#006d2c'],
+          [2.5, '#31a354'],
+          [5, '#006d2c'],
         ],
       },
       'fill-opacity': 0.9,
@@ -164,6 +164,7 @@ export default function addMapLayers(map) {
           [500, 20],
           [1000, 30],
           [5000, 40],
+          [10000, 45],
         ],
       },
       'circle-color': '#FF9F1C',
