@@ -386,7 +386,7 @@ const cumulativeUSCases = [
   {
     date: '2020-03-25',
     day_count: '64',
-    total_confirmed_cases: '68516',
+    total_confirmed_cases: '68515',
     total_deaths: '990',
   },
   {
@@ -398,8 +398,20 @@ const cumulativeUSCases = [
   {
     date: '2020-03-27',
     day_count: '66',
-    total_confirmed_cases: '102497',
-    total_deaths: '1645',
+    total_confirmed_cases: '102648',
+    total_deaths: '1649',
+  },
+  {
+    date: '2020-03-28',
+    day_count: '67',
+    total_confirmed_cases: '123628',
+    total_deaths: '2134',
+  },
+  {
+    date: '2020-03-29',
+    day_count: '68',
+    total_confirmed_cases: '142161',
+    total_deaths: '2486',
   },
 ];
 
