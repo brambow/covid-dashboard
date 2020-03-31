@@ -3,11 +3,7 @@ import { Card, Text, Link, Heading } from 'theme-ui';
 
 const DataInfo = () => {
   return (
-    <Card
-      my={4}
-      // mx={[0, 0, 4, 0]}
-      sx={{ fontSize: [0, 1, 2], width: '100%' }}
-    >
+    <Card my={4} sx={{ fontSize: [0, 1, 1, 2], width: '100%' }}>
       <Heading as="h4">DATA SOURCES</Heading>
       <Text sx={{ textAlign: 'left' }}>
         Virus Counts:{' '}
