@@ -17,6 +17,14 @@ const DataInfo = () => {
           href="https://github.com/nytimes/covid-19-data"
         >
           New York Times
+        </Link>{' '}
+        and{' '}
+        <Link
+          variant="primary"
+          target="_blank"
+          href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"
+        >
+          USA Facts
         </Link>
       </Text>
       <Text sx={{ pt: 2, textAlign: 'left' }}>
