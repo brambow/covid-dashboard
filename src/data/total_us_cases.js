@@ -413,6 +413,12 @@ const cumulativeUSCases = [
     total_confirmed_cases: '142161',
     total_deaths: '2486',
   },
+  {
+    date: '2020-03-30',
+    day_count: '69',
+    total_confirmed_cases: '163796',
+    total_deaths: '3073',
+  },
 ];
 
 export default cumulativeUSCases;
