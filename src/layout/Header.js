@@ -27,7 +27,11 @@ const Header = () => {
       }}
     >
       <Box>
-        <Flex>
+        <Flex
+          sx={{
+            alignItems: 'center',
+          }}
+        >
           <Image
             sx={{ height: 50 }}
             src={colorMode === 'default' ? logo : darkLogo}
@@ -36,9 +40,10 @@ const Header = () => {
             sx={{
               '@media only screen and (max-width: 768px)': {
                 display: 'none',
+                float: 'left',
               },
             }}
-            as="h2"
+            as="h1"
           >
             {title}
           </Heading>
@@ -55,19 +60,31 @@ const Header = () => {
         </Flex>
       </Box>
       <Box>
-        <Text
+        <Flex
           sx={{
-            '@media only screen and (max-width: 768px)': {
-              display: 'none',
-            },
+            height: 50,
+            alignItems: 'center',
           }}
-          color="text"
         >
-          Last Update: {config.lastUpdate}
-        </Text>
+          <Text
+            sx={{
+              '@media only screen and (max-width: 768px)': {
+                display: 'none',
+              },
+            }}
+            color="text"
+          >
+            Last Update: {config.lastUpdate}
+          </Text>
+        </Flex>
       </Box>
       <Box>
-        <Flex>
+        <Flex
+          sx={{
+            height: 50,
+            alignItems: 'center',
+          }}
+        >
           <MapModeButton />
           <ColorModeButton />
         </Flex>
