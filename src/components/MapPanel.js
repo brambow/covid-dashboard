@@ -10,9 +10,11 @@ import { Box } from 'theme-ui';
 import 'mapbox-gl/dist/mapbox-gl.css'; // we need the mapbox css
 import mapExists from '../util/mapExists';
 import { useSelector } from 'react-redux';
-import addMapLayers from '../util/addMapLayers';
+import addCountyModeMapLayers from '../util/addCountyModeMapLayers';
 import mapboxgl from 'mapbox-gl';
 import addStateModeMapLayers from '../util/addStateModeMapLayers';
+import removeCountyModeMapLayers from '../util/removeCountyModeMapLayers';
+import removeStateModeMapLayers from '../util/removeStateModeMapLayers';
 
 const MapPanel = ({ viewWidth }) => {
   const ctx = useContext(ElementsContext);
@@ -132,7 +134,7 @@ const MapPanel = ({ viewWidth }) => {
         map.setStyle('mapbox://styles/mapbox/dark-v10');
       }
       map.on('style.load', () => {
-        addMapLayers(map);
+        addCountyModeMapLayers(map);
       });
     }
   }, [colorMode, map]);
@@ -140,7 +142,7 @@ const MapPanel = ({ viewWidth }) => {
   useEffect(() => {
     if (mapExists(map)) {
       map.on('load', () => {
-        addMapLayers(map);
+        addCountyModeMapLayers(map);
 
         map.on('mouseenter', 'confirmed-cases-per-1000', (e) => {
           map.getCanvas().style.cursor = 'pointer';
@@ -191,6 +193,10 @@ const MapPanel = ({ viewWidth }) => {
     if (mapExists(map)) {
       if (viewLevel === 'states') {
         addStateModeMapLayers(map);
+        removeCountyModeMapLayers(map);
+      } else if (viewLevel === 'counties') {
+        addCountyModeMapLayers(map);
+        removeStateModeMapLayers(map);
       }
     }
   }, [viewLevel, map]);

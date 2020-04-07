@@ -1,9 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Flex, Box } from 'theme-ui';
+import { useSelector } from 'react-redux';
 import TimeSlider from '../components/TimeSlider';
 import { LayerList } from '@cartolab/elements';
 
+const countyLayers = [
+  {
+    layerIds: ['confirmed-cases'],
+    layerName: 'Total Confirmed Cases',
+  },
+  {
+    layerIds: ['confirmed-cases-per-1000'],
+    layerName: 'Confirmed Cases (per 1000 people)',
+  },
+  {
+    layerIds: ['pct_health_coverage'],
+    layerName: '% of Population w/ Health Insurance',
+  },
+  {
+    layerIds: ['pct_65_plus'],
+    layerName: '% 65 and older',
+  },
+];
+
+const stateLayers = [
+  {
+    layerIds: ['states-fill'],
+    layerName: 'TEST STATE',
+  },
+];
+
 const LeftSidebar = ({ width }) => {
+  const viewLevel = useSelector((state) => state.viewLevel);
+  const [layers, setLayers] = useState(countyLayers);
+
+  useEffect(() => {
+    switch (viewLevel) {
+      case 'counties':
+        setLayers(countyLayers);
+        break;
+      case 'states':
+        setLayers(stateLayers);
+        break;
+      default:
+        setLayers(countyLayers);
+        break;
+    }
+  }, [viewLevel]);
+
   return (
     <Box
       className="app-sidebar"
@@ -41,24 +85,7 @@ const LeftSidebar = ({ width }) => {
           sx={{
             overflowY: 'auto',
           }}
-          layers={[
-            {
-              layerIds: ['confirmed-cases'],
-              layerName: 'Total Confirmed Cases',
-            },
-            {
-              layerIds: ['confirmed-cases-per-1000'],
-              layerName: 'Confirmed Cases (per 1000 people)',
-            },
-            {
-              layerIds: ['pct_health_coverage'],
-              layerName: '% of Population w/ Health Insurance',
-            },
-            {
-              layerIds: ['pct_65_plus'],
-              layerName: '% 65 and older',
-            },
-          ]}
+          layers={layers}
         />
       </Flex>
     </Box>
