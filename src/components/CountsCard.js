@@ -13,7 +13,7 @@ const CountsCard = () => {
       }}
     >
       <Heading as="h2">Current US Counts</Heading>
-      <Flex sx={{ mt: 2, px: 4, justifyContent: 'space-between' }}>
+      <Flex sx={{ mt: 2, px: [2, 2, 2, 4], justifyContent: 'space-between' }}>
         <Box sx={{ textAlign: 'center' }}>
           <Heading as="h1" sx={{ color: 'cases' }}>
             {data[data.length - 1].total_confirmed_cases}

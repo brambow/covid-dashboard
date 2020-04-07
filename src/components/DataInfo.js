@@ -3,11 +3,7 @@ import { Card, Text, Link, Heading } from 'theme-ui';
 
 const DataInfo = () => {
   return (
-    <Card
-      my={4}
-      // mx={[0, 0, 4, 0]}
-      sx={{ fontSize: [0, 1, 2], width: '100%' }}
-    >
+    <Card my={4} sx={{ fontSize: [0, 1, 1, 2], width: '100%' }}>
       <Heading as="h4">DATA SOURCES</Heading>
       <Text sx={{ textAlign: 'left' }}>
         Virus Counts:{' '}
@@ -17,6 +13,14 @@ const DataInfo = () => {
           href="https://github.com/nytimes/covid-19-data"
         >
           New York Times
+        </Link>{' '}
+        and{' '}
+        <Link
+          variant="primary"
+          target="_blank"
+          href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"
+        >
+          USA Facts
         </Link>
       </Text>
       <Text sx={{ pt: 2, textAlign: 'left' }}>

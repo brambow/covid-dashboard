@@ -35,7 +35,7 @@ const LeftSidebar = ({ width }) => {
             borderRadius: 20,
             position: 'relative',
             boxShadow: '0 0 8px rgba(0, 0, 0, 0.5)',
-            width: 400,
+            width: width - 25 || 400,
             overflowY: 'auto',
           }}
           sx={{
