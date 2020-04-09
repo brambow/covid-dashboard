@@ -434,13 +434,13 @@ const cumulativeUSCases = [
   {
     date: '2020-04-02',
     day_count: '72',
-    total_confirmed_cases: '244228',
-    total_deaths: '6228',
+    total_confirmed_cases: '244423',
+    total_deaths: '6232',
   },
   {
     date: '2020-04-03',
     day_count: '73',
-    total_confirmed_cases: '276382',
+    total_confirmed_cases: '276501',
     total_deaths: '7121',
   },
   {
@@ -448,6 +448,24 @@ const cumulativeUSCases = [
     day_count: '74',
     total_confirmed_cases: '311536',
     total_deaths: '8499',
+  },
+  {
+    date: '2020-04-05',
+    day_count: '75',
+    total_confirmed_cases: '336774',
+    total_deaths: '9655',
+  },
+  {
+    date: '2020-04-06',
+    day_count: '76',
+    total_confirmed_cases: '366238',
+    total_deaths: '10959',
+  },
+  {
+    date: '2020-04-07',
+    day_count: '77',
+    total_confirmed_cases: '397754',
+    total_deaths: '12956',
   },
 ];
 
