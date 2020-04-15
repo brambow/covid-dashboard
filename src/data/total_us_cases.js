@@ -488,8 +488,20 @@ const cumulativeUSCases = [
   {
     date: '2020-04-11',
     day_count: '81',
-    total_confirmed_cases: '528405',
+    total_confirmed_cases: '528395',
     total_deaths: '20575',
+  },
+  {
+    date: '2020-04-12',
+    day_count: '82',
+    total_confirmed_cases: '555325',
+    total_deaths: '22056',
+  },
+  {
+    date: '2020-04-13',
+    day_count: '83',
+    total_confirmed_cases: '580878',
+    total_deaths: '23607',
   },
 ];
 
