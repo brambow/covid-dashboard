@@ -509,6 +509,12 @@ const cumulativeUSCases = [
     total_confirmed_cases: '607318',
     total_deaths: '26081',
   },
+  {
+    date: '2020-04-15',
+    day_count: '85',
+    total_confirmed_cases: '636776',
+    total_deaths: '28583',
+  },
 ];
 
 export default cumulativeUSCases;
