@@ -375,7 +375,7 @@ const cumulativeUSCases = [
     date: '2020-03-23',
     day_count: '62',
     total_confirmed_cases: '43477',
-    total_deaths: '546',
+    total_deaths: '550',
   },
   {
     date: '2020-03-24',
@@ -417,7 +417,7 @@ const cumulativeUSCases = [
     date: '2020-03-30',
     day_count: '69',
     total_confirmed_cases: '163589',
-    total_deaths: '3073',
+    total_deaths: '3068',
   },
   {
     date: '2020-03-31',
@@ -477,13 +477,13 @@ const cumulativeUSCases = [
     date: '2020-04-09',
     day_count: '79',
     total_confirmed_cases: '463684',
-    total_deaths: '16674',
+    total_deaths: '16673',
   },
   {
     date: '2020-04-10',
     day_count: '80',
     total_confirmed_cases: '496914',
-    total_deaths: '18711',
+    total_deaths: '18710',
   },
   {
     date: '2020-04-11',
@@ -536,14 +536,26 @@ const cumulativeUSCases = [
   {
     date: '2020-04-19',
     day_count: '89',
-    total_confirmed_cases: '753316',
+    total_confirmed_cases: '753314',
     total_deaths: '36109',
   },
   {
     date: '2020-04-20',
     day_count: '90',
-    total_confirmed_cases: '780459',
+    total_confirmed_cases: '780449',
     total_deaths: '37795',
+  },
+  {
+    date: '2020-04-21',
+    day_count: '91',
+    total_confirmed_cases: '805771',
+    total_deaths: '40316',
+  },
+  {
+    date: '2020-04-22',
+    day_count: '92',
+    total_confirmed_cases: '834340',
+    total_deaths: '42501',
   },
 ];
 
